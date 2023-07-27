@@ -3,7 +3,7 @@ on:
   push:
   pull_request:
     types:
-      - closed
+      - opened
 jobs:
   run-github-actions:
     runs-on: ubuntu-latest
