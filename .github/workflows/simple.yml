@@ -17,6 +17,8 @@ jobs:
           print(platform.processor())
   run-windows-command:
     runs-on: windows-latest
+    needs:
+      - run-shell-command
     steps:
       - name: bash-pwd
         run: pwd
