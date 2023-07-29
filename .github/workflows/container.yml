@@ -16,11 +16,11 @@ jobs:
       - name: post user
         run: |
           curl -X POST \
-            http://localhost:3000/api/user \
+            http://localhost:3001/api/user \
              -H 'Content-Type: application/json' \
              -d '{
               "username": "hello",
               "address": "dwded"
           }'
       - name: get user
-        run: curl http://localhost:3000/api/users
+        run: curl http://localhost:3001/api/users
