@@ -3,12 +3,22 @@ on:
   - push
 jobs:
   node-version:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version:
+          - 6
+          - 8
+          - 10
+        os:
+          - macos-latest
+          - windows-latest
+          - ubunto-latest
+    runs-on: ${{matrix.os}}
     steps:
       - name: log node version
         run: node -v
       - uses: actions/setup-node@v1
         with:
-          node-version: '10.x'
+          node-version: ${{matrix.node_version}}
       - name: log node version
         run: node -v
