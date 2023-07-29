@@ -18,9 +18,9 @@ jobs:
             node_version: 6
         include:
           - os: ubuntu-latest
-            is_ubuntu: "true"
+            is_ubuntu: true
     env:
-      IS_UBUNTU: {{$matrix.is_ubuntu}}
+      IS_UBUNTU: ${{matrix.is_ubuntu}}
     runs-on: ${{matrix.os}}
     steps:
       - name: log node version
