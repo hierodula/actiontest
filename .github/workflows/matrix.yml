@@ -13,6 +13,9 @@ jobs:
           - macos-latest
           - windows-latest
           - ubunto-latest
+        exclude:
+          - os: ubuntu-latest
+            node_version: 6
     runs-on: ${{matrix.os}}
     steps:
       - name: log node version
