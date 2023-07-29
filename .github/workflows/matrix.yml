@@ -31,8 +31,6 @@ jobs:
       - name: log node version
         run: | 
           node -v
-          echo $IS_UBUNTU
-          echo ${{env.IS_UBUNTU}}
       - name: say ubuntu
         if: ${{env.IS_UBUNTU}}
         run: echo "i am ubuntu"
