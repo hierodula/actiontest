@@ -34,5 +34,5 @@ jobs:
           echo $IS_UBUNTU
           echo ${{env.IS_UBUNTU}}
       - name: say ubuntu
-        if: ${{$IS_UBUNTU == true}}
+        if: ${{env.IS_UBUNTU}}
         run: echo "i am ubuntu"
