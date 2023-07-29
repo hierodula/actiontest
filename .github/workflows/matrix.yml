@@ -12,10 +12,15 @@ jobs:
         os:
           - macos-latest
           - windows-latest
-          - ubunto-latest
+          - ubuntu-latest
         exclude:
           - os: ubuntu-latest
             node_version: 6
+        include:
+          - os: ubuntu-latest
+            is_ubuntu: true
+    env:
+      IS_UBUNTU: {{$matrix.is_ubuntu}}
     runs-on: ${{matrix.os}}
     steps:
       - name: log node version
@@ -24,4 +29,6 @@ jobs:
         with:
           node-version: ${{matrix.node_version}}
       - name: log node version
-        run: node -v
+        run: | 
+          node -v
+          echo $IS_UBUNTU
